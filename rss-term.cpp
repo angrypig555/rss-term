@@ -1,12 +1,14 @@
-﻿// rss-term.cpp : Defines the entry point for the application.
-//
+﻿#include<iostream>
+#include<curlpp/cURLpp.hpp>
+#include<curlpp/Options.hpp>
 
-#include "rss-term.h"
+int main() {
+	curlpp::Cleanup myCleanup
 
-using namespace std;
+	std::ostringstream os;
+	os << curlpp::options::Url(std::string("http://modernhackers.com"));
 
-int main()
-{
-	cout << "Hello CMake." << endl;
+	string mystring = os.str();
+
 	return 0;
 }
